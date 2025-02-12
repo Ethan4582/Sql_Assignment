@@ -1,0 +1,44 @@
+
+CREATE TABLE student12 (
+    s_id INT PRIMARY KEY,
+    s_name VARCHAR(25) NOT NULL,
+    s_department VARCHAR(25) NOT NULL
+);
+
+
+INSERT INTO student12 VALUES 
+(1001, 'Jayanth', 'ECE'),
+(1002, 'Praveen', 'CSE'),
+(1003, 'Logesh', 'Mech'),
+(1006, 'Karthick', 'Aero'),
+(1007, 'Mahesh', 'Civil');
+
+
+SELECT * FROM student12;
+
+DROP TABLE IF EXISTS vit;
+
+
+CREATE TABLE VIT (
+    s_id INT PRIMARY KEY,
+    s_cgpa VARCHAR(5) NOT NULL
+);
+
+
+INSERT INTO VIT VALUES 
+(1001, '7.2'),
+(1002, '8.6'),
+(1007, '9.25');
+
+SELECT * FROM VIT;
+
+SELECT * FROM  STUDENT CROSS JOIN VIT ;
+
+SELECT * 
+FROM Worker 
+WHERE WORKER_ID IN (SELECT DISTINCT Manager_ID FROM Worker WHERE Manager_ID IS NOT NULL);
+
+
+SELECT W.* 
+FROM Worker W
+INNER JOIN Manager M ON W.WORKER_ID = M.Manager_ID;

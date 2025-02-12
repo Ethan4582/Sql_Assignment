@@ -1,0 +1,38 @@
+
+CREATE TABLE vitbhopal (
+  id INT PRIMARY KEY,
+  name VARCHAR(20) NOT NULL,
+  department VARCHAR(25) NOT NULL
+);
+
+INSERT INTO vitbhopal (id, name, department) 
+VALUES (222, 'Karthik', 'cs'), (312, 'Arun', 'cs');
+
+SELECT * FROM vitbhopal;
+
+CREATE TABLE viteee (
+  id INT PRIMARY KEY, 
+  name VARCHAR(20) NOT NULL,
+  college VARCHAR(25) NOT NULL
+);
+
+INSERT INTO viteee (id, name, college) 
+VALUES (104, 'Karthik', 'chennai'), (103, 'Arun', 'bhopal');
+
+SELECT * FROM viteee;
+
+
+SELECT DEPARTMENT, COUNT(*) AS DEPARTMENT_COUNT 
+FROM Worker
+GROUP BY DEPARTMENT
+HAVING COUNT(*) < 5;
+
+
+SELECT *
+FROM (
+  SELECT *
+  FROM Worker
+  ORDER BY WORKER_ID DESC
+  LIMIT 5
+) AS subquery
+ORDER BY WORKER_ID;

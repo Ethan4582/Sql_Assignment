@@ -1,0 +1,41 @@
+
+USE org123;
+
+-- Step 1: Create the category table
+CREATE TABLE category (
+    c_id int primary key,
+    c_Name varchar(250) NOT NULL
+);
+
+-- Step 2: Create the Products table with a foreign key reference to category
+CREATE TABLE Products (
+    P_ID int primary key,
+    p_Name varchar(250) NOT NULL,
+    c_id int,
+    CONSTRAINT fk_category FOREIGN KEY (c_id)
+    REFERENCES category(c_id)
+);
+
+-- Show tables to confirm creation
+SHOW TABLES FROM org123;
+
+-- Describe the Products table
+DESC Products;
+
+-- Insert a record into the Products table
+INSERT INTO Products VALUES (904, 'Wooden table', NULL);
+
+-- Select all records from the Products table
+SELECT * FROM Products;
+
+-- Select all records from the category table
+SELECT * FROM category;
+
+-- Attempt to delete a record from the category table
+DELETE FROM category WHERE c_id = 101;
+
+-- Drop the Products table if needed
+DROP TABLE Products;
+
+-- Drop the category table if needed
+DROP TABLE category;
