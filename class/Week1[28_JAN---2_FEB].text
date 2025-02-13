@@ -1,41 +1,38 @@
--- Show existing databases
+
 SHOW DATABASES;
 
--- Create a new database named 'VIT'
+
 CREATE DATABASE VIT;
 
 -- Use the 'VIT' database
 USE VIT;
 
--- Create a table 'CSE'
+
 CREATE TABLE CSE (
     s_id INT,
     s_name VARCHAR(30),
     s_mark INT
 );
 
--- Show all tables in the 'VIT' database
-SHOW TABLES FROM VIT;
+SHOW TABLES FROM VIT
 
--- Select all records from the 'CSE' table
+
 SELECT * FROM CSE;
 
--- Insert data into the 'CSE' table 
+
 INSERT INTO CSE (s_id, s_name, s_mark) VALUES (70, 'jm', 78);
 
--- Describe the table structure 
+
 DESC CSE;
 
--- Add a new column 'address' to the 'CSE' table
+
 ALTER TABLE CSE ADD COLUMN address VARCHAR(200);
 
--- Drop the 'address' column from the 'CSE' table
 ALTER TABLE CSE DROP COLUMN address;
 
--- Add a new column 's_country' to the 'CSE' table
 ALTER TABLE CSE ADD COLUMN s_country VARCHAR(200);
 
--- Rename column 's_country' to 's_state' in the 'CSE' table
+
 ALTER TABLE CSE RENAME COLUMN s_state TO s_country ;
 
 UPDATE CSE 
@@ -119,7 +116,6 @@ INSERT INTO Worker
 		(006, 'Vipul', 'Diwan', 200000, '14-06-11 09.00.00', 'Account'),
 		(007, 'Satish', 'Kumar', 75000, '14-01-20 09.00.00', 'Account'),
 		(008, 'Geetika', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin');
-
 
 
 SELECT * FROM Worker 
