@@ -20,10 +20,7 @@ public class Student {
 
         Scanner scann = new Scanner(System.in);
 
-
-
-
-
+//---------------------------------------------------------------------------------
 
         if (authenticateUser(scann)) {
             int choice;
@@ -64,7 +61,7 @@ public class Student {
     }
 
 
-
+//---------------------------------------------------------------------------------
     
 
     private static boolean authenticateUser(Scanner scann) {
@@ -84,7 +81,7 @@ public class Student {
 
 
 
-
+//---------------------------------------------------------------------------------
 
     public static void showMenu() {
         System.out.println("MENU");
@@ -99,7 +96,9 @@ public class Student {
 
     private static void insertStudent(Scanner scann) {
         System.out.print("Enter stud ID: ");
+        
         int studentID = scann.nextInt();
+        
         scann.nextLine();
 
         System.out.print("Enter stud Name: ");
@@ -126,10 +125,12 @@ public class Student {
     }
 
 
-
+//---------------------------------------------------------------------------------
 
     
     private static void removeStudent(Scanner scann) {
+
+        
         System.out.print("Enter stud ID to delete: ");
         int studentID = scann.nextInt();
         Document foundStudent = studrec.find(Filters.eq("id", studentID)).first();
@@ -140,6 +141,9 @@ public class Student {
             System.out.println("stud not found.");
         }
     }
+
+
+////////////---------------------------------------------------------------------------------
 
     private static void modifyStudent(Scanner scann) {
         System.out.print("Enter stud ID to update: ");
@@ -161,6 +165,10 @@ public class Student {
         }
     }
 
+
+    //---------------------------------------------------------------------------------
+
+    
     private static void findStudent(Scanner scann) {
         System.out.print("Enter stud ID to search: ");
         int studentID = scann.nextInt();
@@ -172,6 +180,7 @@ public class Student {
         }
     }
 
+    //---------------------------------------------------------------------------------
     private static void listStudents() {
         FindIterable<Document> allstud = studrec.find();
         for (Document student : allstud) {
